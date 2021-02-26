@@ -1,5 +1,4 @@
 import React from "react";
-import './App.css';
 import Main from "./routing/routing";
 import ButtonAppBar from "./components/appBar";
 
