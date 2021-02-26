@@ -1,15 +1,15 @@
-import React from "react";
-import Main from "./routing/routing";
-import ButtonAppBar from "./components/appBar";
+import React, { Fragment } from "react";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { AppBar } from "./components/AppBar";
 
 function App() {
   return (
-      <div>
-        <ButtonAppBar />
-        <Main />
-      </div>
-      );
+      <Fragment>
+          <CssBaseline />
+          <AppBar />
+        {/*<Main />*/}
+      </Fragment>
+  );
 }
-
 
 export default App;
