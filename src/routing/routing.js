@@ -5,6 +5,8 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import FirstPage from "../components/firstPage";
+import SecondPage from "../components/secondPage";
 
 function Main() {
     return (
@@ -12,19 +14,19 @@ function Main() {
             <nav>
                 <ul>
                     <li>
-                        <Link to="firstPage">Page 1</Link>
+                        <Link to="/firstPage">Page 1</Link>
                     </li>
                     <li>
-                        <Link to="secondPage">Page 2</Link>
+                        <Link to="/secondPage">Page 2</Link>
                     </li>
                 </ul>
             </nav>
             <Switch>
-                <Route path="firstPage">
-                    <firstPage />
+                <Route path="/firstPage">
+                    <FirstPage />
                 </Route>
-                <Route path="secondPage">
-                    <secondPage />
+                <Route path="/secondPage">
+                    <SecondPage />
                 </Route>
             </Switch>
         </Router>
