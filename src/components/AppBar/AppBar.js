@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import useStyles from './styles'
+import { LoginForm } from '../Forms/LoginForm';
 
 export default function AppBar() {
     const classes = useStyles();
@@ -20,7 +21,7 @@ export default function AppBar() {
                     <Typography variant="h6" className={classes.title}>
                         News
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <LoginForm />
                 </Toolbar>
             </App>
         </div>

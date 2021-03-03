@@ -7,7 +7,6 @@ function App() {
       <Fragment>
           <CssBaseline />
           <AppBar />
-        {/*<Main />*/}
       </Fragment>
   );
 }
