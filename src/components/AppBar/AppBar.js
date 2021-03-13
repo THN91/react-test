@@ -1,15 +1,17 @@
 import React from 'react';
 import App from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import useStyles from './styles'
-import { LoginForm } from '../Forms/LoginForm';
 
-export default function AppBar() {
+
+export default function AppBar(props) {
     const classes = useStyles();
+    const { onOpen } = props;
+
 
     return (
         <div className={classes.root}>
@@ -21,7 +23,7 @@ export default function AppBar() {
                     <Typography variant="h6" className={classes.title}>
                         News
                     </Typography>
-                    <LoginForm />
+                    <Button color="inherit" onClick={onOpen}>Login</Button>
                 </Toolbar>
             </App>
         </div>
