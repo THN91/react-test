@@ -8,7 +8,6 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "eslint-config-airbnb": "^18.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
@@ -24,20 +23,7 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "eslint-config-airbnb"
-    ],
-    "rules": {
-      "additional-rule": "warn"
-    },
-    "overrides": [
-      {
-        "files": [
-          "**/*.js"
-        ],
-        "rules": {
-          "additional-typescript-only-rule": "warn"
-        }
-      }
+      "react-app/jest"
     ]
   },
   "browserslist": {
