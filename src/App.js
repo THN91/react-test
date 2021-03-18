@@ -2,24 +2,21 @@ import React, {Fragment, useState} from "react";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { AppBar } from "./components/AppBar";
 import { LoginForm } from "./components/Forms/LoginForm/components";
+import { SignForm } from "./components/Forms/SignForm/components"
 
-function App(props) {
-    const [open, setOpen] = useState(false);
+function App() {
+    const [openLogin, setLogin] = useState(false);
+    const [openSign, setSign] = useState(false);
 
-    const handlerClickOpen = () => {
-        setOpen(true)
-    };
-
-    const handlerClose = () => {
-        setOpen(false)
-    };
 
   return (
       <Fragment>
           <CssBaseline />
-          <AppBar onOpen={handlerClickOpen}/>
-
-          {open && <LoginForm onClose={handlerClose}/>}
+          <AppBar
+                  openLoginForm={() => setLogin(true)}
+                  openSignForm={() => setSign(true)} />
+            <SignForm onClose={() => setSign(false)} isOpen={openSign}/>
+          <LoginForm onClose={() => setLogin(false)} isOpen={openLogin}/>
       </Fragment>
   );
 }

@@ -5,12 +5,13 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+
 import useStyles from './styles'
 
 
 export default function AppBar(props) {
     const classes = useStyles();
-    const { onOpen } = props;
+    const { openLoginForm, openSignForm } = props;
 
 
     return (
@@ -23,7 +24,8 @@ export default function AppBar(props) {
                     <Typography variant="h6" className={classes.title}>
                         News
                     </Typography>
-                    <Button color="inherit" onClick={onOpen}>Login</Button>
+                    <Button color="inherit" onClick={openSignForm}>Sign up</Button>
+                    <Button color="inherit" onClick={openLoginForm}>Login</Button>
                 </Toolbar>
             </App>
         </div>

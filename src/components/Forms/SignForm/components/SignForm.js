@@ -3,9 +3,9 @@ import React, {useState} from "react";
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import TextField from "@material-ui/core/TextField";
-import useStyles from "./styles";
+import useStyles from "./style"
 
-export default function LoginForm(props) {
+export default function SignForm(props) {
     const [ email, setEmail ] = useState();
     const [ password, setPassword ] = useState();
     const classes = useStyles();
@@ -17,7 +17,7 @@ export default function LoginForm(props) {
 
     return (
         <Dialog onClose={onClose} aria-labelledby="simple-dialog-title" open={true}>
-            <DialogTitle id="simple-dialog-title">Log In!</DialogTitle>
+            <DialogTitle id="simple-dialog-title">Create New Account</DialogTitle>
             <form className={classes.root} noValidate autoComplete="off">
                 <div>
                     <TextField
