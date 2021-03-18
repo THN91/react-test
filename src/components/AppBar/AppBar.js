@@ -5,14 +5,16 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { POPUP_TYPES } from "../../config/popup";
 
 import useStyles from './styles'
 
-
 export default function AppBar(props) {
     const classes = useStyles();
-    const { openLoginForm, openSignForm } = props;
+    const { openPopup } = props;
 
+    const openSingUp = () => openPopup('registration')
+    const openLogin = () => openPopup(POPUP_TYPES.LOGIN)
 
     return (
         <div className={classes.root}>
@@ -24,9 +26,9 @@ export default function AppBar(props) {
                     <Typography variant="h6" className={classes.title}>
                         News
                     </Typography>
-                    <Button color="inherit" onClick={openSignForm}>Sign up</Button>
-                    <Button color="inherit" onClick={openLoginForm}>Login</Button>
-                </Toolbar>
+                    <Button color="inherit" onClick={openSingUp}>Sign up</Button>
+                    <Button color="inherit" onClick={openLogin}>Login</Button>
+               </Toolbar>
             </App>
         </div>
     );

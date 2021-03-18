@@ -1,24 +1,43 @@
 import React, {Fragment, useState} from "react";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { AppBar } from "./components/AppBar";
-import { LoginForm } from "./components/Forms/LoginForm/components";
-import { SignForm } from "./components/Forms/SignForm/components"
+import { popups } from "./config/popup";
 
 function App() {
-    const [openLogin, setLogin] = useState(false);
-    const [openSign, setSign] = useState(false);
+    const [ isOpenPopup, setIsOpenPopup ] = useState({
+        isOpen: false,
+        popupName: null,
+    });
 
+    const openPopup = (name, data) => {
+        setIsOpenPopup({
+            ...isOpenPopup,
+            isOpen: true,
+            popupName: name,
+            data
+        })
+    }
 
-  return (
+    const closePopup = () => {
+        setIsOpenPopup({
+            ...isOpenPopup,
+            isOpen: false,
+            popupName: null,
+        })
+    }
+
+    const Popup = popups[isOpenPopup.popupName] || null
+
+    return (
       <Fragment>
-          <CssBaseline />
-          <AppBar
-                  openLoginForm={() => setLogin(true)}
-                  openSignForm={() => setSign(true)} />
-            <SignForm onClose={() => setSign(false)} isOpen={openSign}/>
-          <LoginForm onClose={() => setLogin(false)} isOpen={openLogin}/>
+        <CssBaseline />
+        <AppBar openPopup={openPopup}/>
+
+        {/*ADD Drawer */}
+
+        {isOpenPopup.isOpen && <Popup onClose={closePopup} data={isOpenPopup.data}/>}
       </Fragment>
-  );
+    );
 }
 
 export default App;

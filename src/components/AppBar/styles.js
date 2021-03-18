@@ -1,5 +1,4 @@
 import {makeStyles} from "@material-ui/core/styles";
-import {blue} from "@material-ui/core/colors";
 
 export default makeStyles((theme) => ({
     root: {
@@ -10,8 +9,5 @@ export default makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
-    },
-    loginButton: {
-        color: blue,
-    },
+    }
 }));
