@@ -16,7 +16,7 @@ function App() {
             popupName: name,
             data
         })
-    }
+    };
 
     const closePopup = () => {
         setIsOpenPopup({
@@ -24,9 +24,9 @@ function App() {
             isOpen: false,
             popupName: null,
         })
-    }
+    };
 
-    const Popup = popups[isOpenPopup.popupName] || null
+    const Popup = popups[isOpenPopup.popupName] || null;
 
     return (
       <Fragment>

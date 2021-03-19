@@ -35,7 +35,6 @@ export default function LoginForm(props) {
                     className={classes.button}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-
                 <Button color="primary">Submit</Button>
             </form>
         </Dialog>

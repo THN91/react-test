@@ -13,8 +13,8 @@ export default function AppBar(props) {
     const classes = useStyles();
     const { openPopup } = props;
 
-    const openSingUp = () => openPopup('registration')
-    const openLogin = () => openPopup(POPUP_TYPES.LOGIN)
+    const openSingUp = () => openPopup(POPUP_TYPES.REGISTRATION);
+    const openLogin = () => openPopup(POPUP_TYPES.LOGIN);
 
     return (
         <div className={classes.root}>

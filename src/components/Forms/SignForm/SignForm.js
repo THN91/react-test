@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-
+import Button from "@material-ui/core/Button";
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import TextField from "@material-ui/core/TextField";
 import useStyles from "./style"
+
 
 export default function SignForm(props) {
     const { onClose } = props;
@@ -15,12 +16,12 @@ export default function SignForm(props) {
         <Dialog onClose={onClose} aria-labelledby="simple-dialog-title" open={true}>
             <DialogTitle id="simple-dialog-title">Create New Account</DialogTitle>
             <form className={classes.root} noValidate autoComplete="off">
-                <div>
                     <TextField
                         value={email}
                         label="Email"
                         type="Email"
                         variant="filled"
+                        className={classes.button}
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <TextField
@@ -30,9 +31,10 @@ export default function SignForm(props) {
                         type="password"
                         autoComplete="current-password"
                         variant="filled"
+                        className={classes.button}
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                </div>
+                <Button color="primary">Submit</Button>
             </form>
         </Dialog>
     );

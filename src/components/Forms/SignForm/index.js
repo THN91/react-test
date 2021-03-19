@@ -1,1 +1,1 @@
-export { default as SignForm } from './components/SignForm'
+export { default as SignForm } from './SignForm'
