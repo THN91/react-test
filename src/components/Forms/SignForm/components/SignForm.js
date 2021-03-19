@@ -6,14 +6,10 @@ import TextField from "@material-ui/core/TextField";
 import useStyles from "./style"
 
 export default function SignForm(props) {
-    const [ email, setEmail ] = useState();
-    const [ password, setPassword ] = useState();
+    const { onClose } = props;
+    const [ email, setEmail ] = useState('');
+    const [ password, setPassword ] = useState('');
     const classes = useStyles();
-    const { onClose, isOpen } = props;
-
-    if(!isOpen){
-        return null
-    }
 
     return (
         <Dialog onClose={onClose} aria-labelledby="simple-dialog-title" open={true}>
